@@ -1,0 +1,37 @@
+6
+The Godfather Part II 
+25.50
+Francis Ford Coppola
+1974
+Crime/Drama
+16
+2021: Uma Odisseia no Espaco
+45.99
+Stanley Kubrick
+1968
+Ficcao
+0
+Tempos modernos
+30.25
+Charlie Chaplin
+1936
+Comedia/Terror
+18
+Clube da Luta
+25.50
+David Fincher
+1999
+Suspense
+18
+Ex_Machina: Instinto Artificial
+88.25
+Alex Garland
+2015
+Ficcao/Suspense
+18
+The Ballad of Buster Scruggs
+50.00
+Ethan Coen, Joel Coen
+2018
+Faroeste/Drama
+18
