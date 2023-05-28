@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "Cabecalho.h"
 
 typedef struct info{
@@ -13,7 +12,7 @@ typedef struct info{
 typedef struct filme{
     char nome[101];    // 100 caracteres + 1 para fim de string
     float preco;       // Até duas casas decimais
-    Info *informações; // Ponteiro para struct Info
+    Info *informacoes; // Ponteiro para struct Info
 } Filme;
 
 int main(void){

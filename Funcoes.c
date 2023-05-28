@@ -1,6 +1,8 @@
 #include "Cabecalho.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
+#include <string.h>
 
 typedef struct info{
     char diretor[101]; // 101 caracteres + 1 para fim de string
@@ -12,12 +14,12 @@ typedef struct info{
 typedef struct filme{
     char nome[101];    // 100 caracteres + 1 para fim de string
     float preco;       // Até duas casas decimais
-    Info *informações; // Ponteiro para struct Info
+    Info *informacoes; // Ponteiro para struct Info
 } Filme;
 
 
 void imprimir_filme(Filme* f){
-    printf("%.2f R$ || %s (%s, %d) || %s %d\n", f->preco, f->nome, f->informações->genero, f->informações->faixaEtaria,f->informações->diretor, f->informações->ano);
+    printf("%.2f R$ || %s (%s, %d) || %s %d\n", f->preco, f->nome, f->informacoes->genero, f->informacoes->faixaEtaria,f->informacoes->diretor, f->informacoes->ano);
 }
 
 // Função que imprime a tabela atualizada dos filmes cadastrados
@@ -39,42 +41,30 @@ void clear_keyboard_buffer(void){
     return;
 }
 
-
-
 Filme* criar_filme(){
     Filme* filme;
     filme = malloc(sizeof(Filme));
-    filme->informações = malloc(sizeof(Info));
+    filme->informacoes = malloc(sizeof(Info));
 
     printf("Nome: ");
-    scanf("%[^\n]", filme->nome);
-    //fgets(filme->nome, 101, stdin);
-    getchar();
-    clear_keyboard_buffer();
+    scanf(" %[^\n]", filme->nome);
 
     printf("Preco: ");
     scanf("%f", &filme->preco);
-    //clear_keyboard_buffer();
 
     printf("Diretor: ");
-    scanf("%[^\n]", filme->informações->diretor);
-    //fgets(filme->informações->diretor, 101, stdin);
+    scanf(" %[^\n]", filme->informacoes->diretor);
     getchar();
-    clear_keyboard_buffer();
 
     printf("Ano: ");
-    scanf("%d", &filme->informações->ano);
-    //clear_keyboard_buffer();
+    scanf("%d", &filme->informacoes->ano);
 
     printf("Genero: ");
-    scanf("%[^\n]", filme->informações->genero);
-    //fgets(filme->informações->genero, 51, stdin);
+    scanf(" %[^\n]", filme->informacoes->genero);
     getchar();
-    clear_keyboard_buffer();
 
     printf("Faixa etaria: ");
-    scanf("%d", &filme->informações->faixaEtaria);
-    //clear_keyboard_buffer();
+    scanf("%d", &filme->informacoes->faixaEtaria);
 
     return filme;
 }
