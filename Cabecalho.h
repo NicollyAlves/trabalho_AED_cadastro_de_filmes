@@ -1,5 +1,10 @@
+#ifndef CABECALHO_H
+#define CABECALHO_H
+
 //estrutura para um Filme
 typedef struct filme Filme;
+
+typedef struct info Info;
 
 //Função que cria e retorna um ponteiro simples para o tipo Filme
 Filme* criar_filme();
@@ -27,3 +32,7 @@ void set_ano(Filme* f, int novo);
 
 //função que acessa e modifica a faixa etária de um filme
 void set_faixaetaria(Filme* f, int novo);
+
+void print_tabela(Filme **tabela, int tam);
+
+#endif
