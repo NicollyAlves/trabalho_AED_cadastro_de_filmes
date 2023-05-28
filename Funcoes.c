@@ -28,7 +28,6 @@ void menu(){
     int opcaoAtualizar = 0;
     int opcao = 0;
 
-    scanf("%d", &opcao);
     while(opcao != 4){
 
         printf("MENU DE OPCOES\n");
@@ -45,9 +44,9 @@ void menu(){
             break;
             
             case 2:
-                printf("1 - RENOMEAR TITULO");
-                printf("2 - ATUALIZAR PRECO");
-                printf("3 - ATUALIZAR GENERO");
+                printf("1 - RENOMEAR TITULO\n");
+                printf("2 - ATUALIZAR PRECO\n");
+                printf("3 - ATUALIZAR GENERO\n");
 
                 scanf("%d", &opcaoAtualizar);
 
@@ -76,7 +75,7 @@ void menu(){
             break;
         }
 
-    };
+    }
 }
 
 // Função que imprime a tabela atualizada dos filmes cadastrados
@@ -89,12 +88,6 @@ void print_tabela(Filme **tabela, int tam){
         imprimir_filme(tabela[i]);
     }
     menu();
-}
-
-void clear_keyboard_buffer(void){
-    int c = 0;
-    while ((c = getchar()) != '\n' && c != EOF) {}
-    return;
 }
 
 Filme* criar_filme(){
@@ -110,14 +103,12 @@ Filme* criar_filme(){
 
     printf("Diretor: ");
     scanf(" %[^\n]", filme->informacoes->diretor);
-    getchar();
 
     printf("Ano: ");
     scanf("%d", &filme->informacoes->ano);
 
     printf("Genero: ");
     scanf(" %[^\n]", filme->informacoes->genero);
-    getchar();
 
     printf("Faixa etaria: ");
     scanf("%d", &filme->informacoes->faixaEtaria);
